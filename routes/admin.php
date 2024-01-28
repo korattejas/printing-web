@@ -42,12 +42,17 @@ Route::prefix('')->group(function () {
             Route::get('create', [RoleController::class, 'create'])->name('admin.role.create');
             Route::post('store', [RoleController::class, 'store'])->name('admin.role.store');
         });
-        Route::prefix('permission')->group(function () {
-            Route::get('', [PermissionController::class, 'index'])->name('admin.permission.index');
+
+//        Route::prefix('permission')->group(function () {
+            Route::resource('permission', PermissionController::class);
             Route::get('getDatatablePermission', [PermissionController::class, 'getDataTablePermission'])->name('admin.getDataTablePermission');
-            Route::get('create', [PermissionController::class, 'create'])->name('admin.permission.create');
-            Route::post('store', [PermissionController::class, 'store'])->name('admin.permission.store');
-        });
+
+//            Route::get('', [PermissionController::class, 'index'])->name('admin.permission.index');
+//            Route::get('create', [PermissionController::class, 'create'])->name('admin.permission.create');
+//            Route::get('edit/{id}', [PermissionController::class, 'edit'])->name('admin.permission.edit');
+//            Route::get('update', [PermissionController::class, 'update'])->name('admin.permission.update');
+//            Route::post('store', [PermissionController::class, 'store'])->name('admin.permission.store');
+//        });
     });
 
 

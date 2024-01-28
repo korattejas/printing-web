@@ -35,8 +35,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header border-bottom">
-                        <h4 class="card-title">Ajax Sourced Server-side</h4>
-                        <a href="{{ route('admin.permission.create') }}" class="btn btn-primary mb-1">Add New
+                        <h4 class="card-title">Permission Data</h4>
+                        <a href="{{ route('permission.create') }}" class="btn btn-primary mb-1">Add New
                             Permission</a>
                     </div>
 
@@ -74,10 +74,11 @@
 @push('js')
     <script src="{{ asset('admin/app-assets/js/scripts/pages/modal-add-role.js') }}"></script>
     <script src="{{ asset('admin/app-assets/js/scripts/pages/app-access-roles.js') }}"></script>
-    <script src="{{ asset('admin/app-assets/js/core/custom.js') }}?v={{time()}}"></script>
     {{--    <script src="{{ asset('admin/app-assets/js/scripts/tables/table-datatables-advanced.js') }}"></script>--}}
 
     <script>
+        const sweetalert_delete_title = "Delete Permission?";
+        const form_url = '/permission';
         datatable_url = '/getDataTablePermission';
         $(document).ready(function () {
             $('#permission-table').DataTable({

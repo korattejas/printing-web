@@ -2,16 +2,16 @@
 @section('title', 'Permission')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="#">Permission</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('permission.index') }}">Permission</a></li>
     <li class="breadcrumb-item active">create</li>
 @stop
 
 @push('top_css')
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+{{--    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">--}}
 @endpush
 
 @push('css')
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+{{--    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">--}}
 @endpush
 
 <!-- Page content --->
@@ -25,13 +25,17 @@
                         <h4 class="card-title">Add Permission Form</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.permission.store') }}" method="POST" class="form form-vertical">
+                        <form method="POST" data-parsley-validate="" id="addEditForm" class="form form-vertical"
+                              role="form">
                             @csrf
+                            <input type="hidden" name="edit_value" value="0">
+                            <input type="hidden" id="form-method" value="add">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-1">
                                         <label class="form-label" for="first-name-vertical">Permission Name</label>
-                                        <input type="text" id="permission_name" class="form-control" name="permission_name" placeholder="Permission Name" />
+                                        <input type="text" id="permission_name" class="form-control"
+                                               name="permission_name" placeholder="Permission Name"/>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -59,9 +63,12 @@
 @endsection
 
 @push('top_js')
-    {{-- top js --}}
+
 @endpush
 
 @push('js')
-    {{-- js --}}
+    <script>
+        const form_url = 'permission';
+        const redirect_url = 'permission';
+    </script>
 @endpush

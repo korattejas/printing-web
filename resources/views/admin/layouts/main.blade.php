@@ -25,6 +25,16 @@
 
     <!-- BEGIN: Vendor CSS-->
     @stack('top_css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/vendors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/extensions/toastr.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('admin/app-assets/css/plugins/extensions/ext-component-toastr.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('admin/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('admin/app-assets/css/plugins/extensions/ext-component-sweet-alerts.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -38,6 +48,10 @@
 
     <!-- BEGIN: Page CSS-->
     @stack('css')
+    <link rel="stylesheet" type="text/css"
+          href="{{ asset('admin/app-assets/css/core/menu/menu-types/vertical-menu.css') }}">
+
+
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -101,6 +115,9 @@
 
 <!-- BEGIN: Vendor JS-->
 <script src="{{ asset('admin/app-assets/vendors/js/vendors.min.js') }}"></script>
+<script src="{{ asset('admin/app-assets/vendors/js/extensions/toastr.min.js') }}"></script>
+<script src="{{ asset('admin/app-assets/vendors/js/extensions/moment.min.js') }}"></script>
+<script src="{{ asset('admin/app-assets/vendors/js/extensions/sweetalert2.all.min.js') }}"></script>
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
@@ -113,6 +130,10 @@
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
+<script src="{{ asset('admin/app-assets/js/scripts/parsley.js') }}"></script>
+<script src="{{ asset('admin/app-assets/js/core/form.js') }}?v={{time()}}"></script>
+<script src="{{ asset('admin/app-assets/js/scripts/axios.min.js') }}"></script>
+<script src="{{ asset('admin/app-assets/js/core/custom.js') }}?v={{time()}}"></script>
 @stack('js')
 <!-- END: Page JS-->
 
@@ -131,6 +152,15 @@
     let APP_URL = {!! json_encode(env('APP_URL') . '/admin') !!};
     let JS_URL = '{{url('/')}}';
     let datatable_url = '/';
+    let is_admin_open = 1;
+    const status_msg = "Are You Sure?";
+    const confirmButtonText = "Yes,change it";
+    const cancelButtonText = "No";
+    const sweetalert_delete_text = "Are you sure want to delete this record?";
+    const cancel_button_text = "Cancel";
+    const delete_button_text = "Delete";
+    const sweetalert_change_status_text = "Are you sure want to change status of this record?";
+    const yes_change_it = "Change";
 </script>
 </body>
 <!-- END: Body-->

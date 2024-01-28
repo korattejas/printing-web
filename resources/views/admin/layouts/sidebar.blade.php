@@ -47,7 +47,7 @@
             </li>
             <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('admin.role.index') }}"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Role</span></a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('admin.permission.index') }}"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Permission</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('permission.index') }}"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="Chat">Permission</span></a>
             </li>
             {{-- <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
             </li> --}}
