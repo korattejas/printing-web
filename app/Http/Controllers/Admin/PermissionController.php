@@ -15,16 +15,25 @@ class PermissionController extends Controller
         return view('admin.permissions.index');
     }
 
-    public function getDataTablePermission(): \Illuminate\Http\JsonResponse
+    public function getDataTablePermission(Request $request): \Illuminate\Http\JsonResponse
     {
-        $permissions = DB::table('permissions')->select(['id', 'name', 'guard_name', 'created_at']);
-
-        return DataTables::of($permissions)
-            ->addColumn('action', function ($permissions) {
-                return '<a href="#" class="btn btn-sm btn-primary">Edit</a>
-                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteTask' . $permissions->id . '">Delete</button>';
-            })
-            ->make(true);
+        if ($request->ajax()) {
+            $permission = DB::table('permissions')->select(['id', 'name', 'guard_name', 'created_at']);
+            return DataTables::of($permission)
+                ->addColumn('action', function ($permission) {
+                    $action_array = [
+                        'is_simple_action' => 1,
+//                        'edit_route' => route('admin.category.edit', $category->id),
+                        'delete_id' => $permission->id,
+                        'hidden_id' => $permission->id,
+                    ];
+                    return view('admin.render_view.datable_action', [
+                        'action_array' => $action_array
+                    ])->render();
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
     }
 
     public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
