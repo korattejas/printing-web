@@ -15,7 +15,7 @@ class PermissionController extends Controller
 {
     use CommonFunction;
 
-    protected mixed $error_message, $validator_error_code, $backend_error_code, $success_status_code, $controller_name;
+    protected mixed $error_message, $controller_name;
 
     public function __construct()
     {

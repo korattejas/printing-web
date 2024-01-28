@@ -72,8 +72,8 @@
 @endpush
 
 @push('js')
-    <script src="{{ asset('admin/app-assets/js/scripts/pages/modal-add-role.js') }}"></script>
-    <script src="{{ asset('admin/app-assets/js/scripts/pages/app-access-roles.js') }}"></script>
+{{--    <script src="{{ asset('admin/app-assets/js/scripts/pages/modal-add-role.js') }}"></script>--}}
+{{--    <script src="{{ asset('admin/app-assets/js/scripts/pages/app-access-roles.js') }}"></script>--}}
     {{--    <script src="{{ asset('admin/app-assets/js/scripts/tables/table-datatables-advanced.js') }}"></script>--}}
 
     <script>
@@ -84,7 +84,7 @@
             $('#permission-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{!! route('admin.getDataTablePermission') !!}',
+                ajax: '{!! route('getDataTablePermission') !!}',
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},

@@ -44,8 +44,8 @@ Route::prefix('')->group(function () {
         });
 
 //        Route::prefix('permission')->group(function () {
-            Route::resource('permission', PermissionController::class);
-            Route::get('getDatatablePermission', [PermissionController::class, 'getDataTablePermission'])->name('admin.getDataTablePermission');
+        Route::resource('permission', PermissionController::class);
+        Route::get('getDatatablePermission', [PermissionController::class, 'getDataTablePermission'])->name('getDataTablePermission');
 
 //            Route::get('', [PermissionController::class, 'index'])->name('admin.permission.index');
 //            Route::get('create', [PermissionController::class, 'create'])->name('admin.permission.create');

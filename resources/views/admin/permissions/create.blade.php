@@ -7,11 +7,9 @@
 @stop
 
 @push('top_css')
-{{--    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">--}}
 @endpush
 
 @push('css')
-{{--    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">--}}
 @endpush
 
 <!-- Page content --->

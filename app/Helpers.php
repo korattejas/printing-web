@@ -43,7 +43,6 @@ if (!function_exists('logError')) {
                 [
                     'error_message' => $exception->getMessage(),
                     'request' => request()->all(),
-//                    'user' => auth('api')->user(),
                 ]
             );
         });
