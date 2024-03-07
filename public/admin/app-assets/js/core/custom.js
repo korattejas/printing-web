@@ -3,12 +3,13 @@ const funTooltip = () => {
 }
 
 const notificationToast = (message, type) => {
+
     if (type === 'success') {
         toastr['success'](message, 'Success!', {
             closeButton: true,
             tapToDismiss: false,
         });
-    } else if (type === 'warning') {
+    } else if (type === 'Warning') {
         toastr['warning'](message, 'Warning!', {
             closeButton: true,
             tapToDismiss: false,

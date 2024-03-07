@@ -1,9 +1,9 @@
 @extends('admin.layouts.main')
-@section('title', 'Permission')
+@section('title', 'Employee Leave Balance Record')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('permission.index') }}">Permission</a></li>
-    <li class="breadcrumb-item active">create</li>
+    <li class="breadcrumb-item"><a href="{{ route('leave-balance.index') }}">Leave Balance</a></li>
+    <li class="breadcrumb-item active">Create</li>
 @stop
 
 @push('top_css')
@@ -20,7 +20,7 @@
             <div class="col-md-6 col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Add Permission Form</h4>
+                        <h4 class="card-title">Add Leave Balance Form</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" data-parsley-validate="" id="addEditForm" class="form form-vertical"
@@ -31,19 +31,21 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-1">
-                                        <label class="form-label" for="first-name-vertical">Permission Name</label>
-                                        <input type="text" id="permission_name" class="form-control"
-                                               name="permission_name" placeholder="Permission Name"/>
+                                        <label class="form-label" for="leave_type">Leave Type</label>
+                                        <select id="leave_type" class="form-select" name="leave_type">
+                                            <option value="">Select Leave Type</option>
+                                            @foreach($leaveTypes as $types)
+                                                <option value="{{ $types->id }}">{{ $types->leaveType }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-1">
-                                        <label class="form-label" for="basicSelect">Select Guard</label>
-                                        <select class="form-select" name="guard_name" id="basicSelect">
-                                            <option>-- SELECT GUARD --</option>
-                                            <option value="Admin">Admin</option>
-                                            <option value="Web">Web</option>
-                                        </select>
+                                        <label class="form-label" for="first-name-vertical">Leave Balance</label>
+                                        <input type="number"
+                                               id="leave_balance" class="form-control"
+                                               name="leave_balance" placeholder="Leave Balance"/>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -66,7 +68,7 @@
 
 @push('js')
     <script>
-        const form_url = 'permission';
-        const redirect_url = 'permission';
+        const form_url = 'leave-balance';
+        const redirect_url = 'leave-balance';
     </script>
 @endpush

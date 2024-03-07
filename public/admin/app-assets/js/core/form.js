@@ -16,6 +16,11 @@ $(function () {
             let formData = new FormData($form[0]);
             axios.post(APP_URL + '/' + form_url, formData)
                 .then(function (response) {
+                    if (response.data.error) {
+                        notificationToast(response.data.message, 'Warning');
+                        loaderHide();
+                        return false;
+                    }
                     if ($("#form-method").val() === 'add') {
                         $form[0].reset();
                     }
@@ -26,7 +31,7 @@ $(function () {
                     notificationToast(response.data.message, 'success');
                 })
                 .catch(function (error) {
-                    notificationToast(error.response.data.message, 'warning');
+                    notificationToast(error.response.data.message, 'Warning');
                     loaderHide();
                 });
         }
