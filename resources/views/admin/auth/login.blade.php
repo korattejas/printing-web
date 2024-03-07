@@ -19,8 +19,8 @@
 
                                 <h4 class="card-title mb-1">Welcome! 👋</h4>
 
-                                <form class="auth-login-form mt-2" action="{{ route('admin.auth.login') }}"
-                                      method="POST">
+                                <form class="mt-2" action="{{ route('admin.auth.login') }}"
+                                      method="POST" id="loginForm">
                                     @csrf
                                     <div class="mb-1">
                                         <label for="login-email" class="form-label">Email</label>
@@ -31,12 +31,6 @@
                                     </div>
 
                                     <div class="mb-1">
-                                        <div class="d-flex justify-content-between">
-                                            <label class="form-label" for="login-password">Password</label>
-                                            <a href="auth-forgot-password-basic.html">
-                                                <small>Forgot Password?</small>
-                                            </a>
-                                        </div>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input type="password" class="form-control form-control-merge" id="password"
                                                    name="password" tabindex="2"
@@ -47,9 +41,9 @@
                                         </div>
                                     </div>
                                     <div class="mb-1">
-                                        <a href="{{ route('admin.auth.register-form') }}">
-                                            <small>Sign Up</small>
-                                        </a>
+                                        <h3> <a href="{{ route('admin.auth.register-form') }}">
+                                                Sign Up
+                                            </a></h3>
                                     </div>
                                     <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
                                 </form>
