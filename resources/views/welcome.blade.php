@@ -25,16 +25,17 @@
                                     <div class="mb-1">
                                         <label for="login-email" class="form-label">Email</label>
                                         <input type="text" class="form-control" id="email" name="email"
-                                               placeholder="admin@example.com" aria-describedby="login-email"
+                                               placeholder="Enter email"
                                                tabindex="1"
                                                autofocus/>
                                     </div>
 
                                     <div class="mb-1">
+                                        <label for="login-email" class="form-label">Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input type="password" class="form-control form-control-merge" id="password"
                                                    name="password" tabindex="2"
-                                                   placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                                   placeholder="Enter password"
                                                    aria-describedby="login-password"/>
                                             <span class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>
